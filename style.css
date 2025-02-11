@@ -116,6 +116,10 @@ body {
 }
 
 
+[data-theme="dark"] table th {
+  background-color: #444;
+  color: #fff;
+}
 
 
 .container {
@@ -197,7 +201,7 @@ table {
 
 th, td {
     padding: 15px;
-    text-align: right;
+    text-align: center;
 }
 
 th {
@@ -234,14 +238,19 @@ td {
     color: var(--white);
 }
 
-/* تنسيق ملخص المبيعات */
-.summary {
-    background-color: var(--white);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
+
+.toast-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 
 
@@ -338,6 +347,39 @@ td {
 }
 
 
+/*  عرض المنتجات المباعه*/
+.sales-link {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.sales-link:hover {
+  text-decoration: underline;
+}
+
+/* زر بيع المنتجات */
+.sell-btn {
+  background-color: #f1c40f;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sell-btn:hover {
+  background-color: #f39c12;
+}
+
+
+
+
 
 /* Media Query */
 @media (max-width: 768px) {
@@ -360,3 +402,30 @@ td {
         overflow-x: auto;
     }
 } 
+
+
+
+/* تنسيق صفوف الإجمالي */
+.total-row {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* تمييز القيم داخل خلايا الإجمالي */
+#totalQuantity {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* تحسين مظهر الجدول */
+tfoot th {
+  padding: 15px;
+  border-top: 3px solid var(--border-color);
+}

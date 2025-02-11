@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>المنتجات المباعة والمتوفرة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- زر تبديل الوضع الليلي -->
+    <div class="theme-switch">
+        <button id="themeToggle" class="theme-toggle-btn">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>قائمة المنتجات</h1>
+        <table id="salesTable">
+            <thead>
+                <tr>
+                    <th>اسم المنتج</th>
+                    <th>الكمية المباعة</th>
+                    <th>الكمية المتبقية</th>
+                    <th>إجمالي سعر مبيعات المنتج</th>
+                </tr>
+            </thead>
+            <tbody id="salesList"></tbody>
+            <tfoot>
+              <tr>
+                  <th colspan="2">إجمالي الكمية الكلية</th>
+                  <th id="totalQuantity" colspan="2">0</th>
+              </tr>
+          </tfoot>
+
+        </table>
+        <a href="index.html" class="sales-link">🔙 الرجوع إلى الصفحة الرئيسية</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadSalesData();
+            initTheme();
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        });
+    </script>
+
+</body>
+</html>

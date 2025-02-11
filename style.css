@@ -1,0 +1,362 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --border-color: #bdc3c7;
+    --success-color: #27ae60;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+
+/* إضافة متغيرات الألوان للوضعين */
+:root[data-theme="light"] {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
+  --border-color: #bdc3c7;
+  --success-color: #27ae60;
+  --white: #ffffff;
+  --card-bg: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --primary-color: #ecf0f1;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --background-color: #1a1a1a;
+  --text-color: #ecf0f1;
+  --border-color: #2c3e50;
+  --success-color: #27ae60;
+  --white: #2c2c2c;
+  --card-bg: #2c2c2c;
+}
+
+/* تنسيق زر تبديل الثيم */
+.theme-switch {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle-btn {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* تعديل الألوان للوضع الليلي */
+[data-theme="dark"] .add-product,
+[data-theme="dark"] .products{
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] input {
+  background-color: #3a3a3a;
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] table tr:nth-child(even) {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .modal-content {
+  background-color: var(--card-bg);
+}
+
+/* إخفاء/إظهار أيقونات الثيم */
+
+
+.dark-icon {
+  display: block;
+}
+
+.light-icon {
+  display: none;
+}
+
+[data-theme="dark"] .light-icon {
+  display: block;
+}
+
+[data-theme="dark"] .dark-icon {
+  display: none;
+}
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2.5em;
+    font-weight: 600;
+    padding: 20px 0;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* تنسيق قسم إضافة المنتج */
+.add-product {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.add-product h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+input {
+    padding: 12px;
+    margin: 8px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    width: 220px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الجدول */
+.products {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: right;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+}
+
+th:first-child {
+    border-top-right-radius: 8px;
+}
+
+th:last-child {
+    border-top-left-radius: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+td {
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* تنسيق الأزرار */
+.edit-btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    margin-left: 8px;
+}
+
+.delete-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* تنسيق ملخص المبيعات */
+.summary {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+
+
+/* تنسيق نافذة التعديل */
+.edit-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.form-group input {
+    width: 100%;
+    margin: 0;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.modal-buttons button {
+    min-width: 120px;
+}
+
+.modal-buttons button:first-child {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+.cancel-btn {
+    background-color: #95a5a6;
+    color: var(--white);
+}
+
+
+.add-product button {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+.add-product button:hover {
+    background-color: #219a52;
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+
+
+/* Media Query */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .modal-content {
+        min-width: 90%;
+        margin: 10px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+} 

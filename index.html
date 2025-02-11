@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نظام المبيعات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Dark Mode -->
+  <div class="theme-switch">
+    <button id="themeToggle" class="theme-toggle-btn">
+        <span class="light-icon">☀️</span>
+        <span class="dark-icon">🌙</span>
+    </button>
+</div>
+    <div class="container">
+        <h1>نظام إدارة مبيعات</h1>
+        
+        <div class="add-product">
+            <h2>إضافة منتج جديد</h2>
+            <input type="text" id="productName" placeholder="اسم المنتج">
+            <input type="number" id="productPrice" placeholder="السعر">
+            <input type="number" id="productQuantity" placeholder="الكمية">
+            <button onclick="addProduct()">إضافة منتج</button>
+        </div>
+
+        <div class="products">
+            <h2>قائمة المنتجات</h2>
+            <table id="productsTable">
+                <thead>
+                    <tr>
+                        <th>اسم المنتج</th>
+                        <th>السعر</th>
+                        <th>الكمية</th>
+                        <th>الإجمالي</th>
+                        <th>العمليات</th>
+                    </tr>
+                </thead>
+                <tbody id="productsList"></tbody>
+            </table>
+        </div>
+<div class="edit-modal" id="editModal">
+    <div class="modal-content">
+        <h2>تعديل المنتج</h2>
+        
+        <div class="form-group">
+            <label for="editProductName">اسم المنتج:</label>
+            <input type="text" id="editProductName" placeholder="اسم المنتج">
+        </div>
+
+        <div class="form-group">
+            <label for="editProductPrice">سعر المنتج:</label>
+            <input type="number" id="editProductPrice" placeholder="السعر">
+        </div>
+
+        <div class="form-group">
+            <label for="editProductQuantity">الكمية المتوفرة:</label>
+            <input type="number" id="editProductQuantity" placeholder="الكمية">
+        </div>
+
+        <input type="hidden" id="editProductId">
+        
+        <div class="modal-buttons">
+            <button onclick="updateProduct()">حفظ التعديلات</button>
+            <button class="cancel-btn" onclick="closeEditModal()">إلغاء</button>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -402,30 +402,3 @@ td {
         overflow-x: auto;
     }
 } 
-
-
-
-/* تنسيق صفوف الإجمالي */
-.total-row {
-  background-color: var(--secondary-color);
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.2em;
-}
-
-/* تمييز القيم داخل خلايا الإجمالي */
-#totalQuantity {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: var(--primary-color);
-  background-color: var(--white);
-  padding: 10px;
-  border-radius: 8px;
-}
-
-/* تحسين مظهر الجدول */
-tfoot th {
-  padding: 15px;
-  border-top: 3px solid var(--border-color);
-}
